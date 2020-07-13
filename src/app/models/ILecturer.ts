@@ -1,5 +1,5 @@
-import { ILecturerType } from './ILecturerType';
-import { ISubject } from './ISubject';
+import { LecturerEnum } from './ILecturerType';
+import { SubjectEnum } from '../json/subjects';
 
 export interface ILecturer {
     Id : number ;
@@ -10,7 +10,7 @@ export interface ILecturer {
     HomeNumber ? : string;
     Address ? : string;
     Email ? : string;
-    Type : ILecturerType;
-    Subjects : ISubject [];
-
+    LecturerType : LecturerEnum;
+    FreeTime ? : Date[];
+    Subjects : SubjectEnum [];
 }

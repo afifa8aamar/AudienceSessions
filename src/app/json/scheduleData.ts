@@ -1,4 +1,3 @@
-
 import { SchedulerEvent } from '@progress/kendo-angular-scheduler';
 
 const baseData: any[] = [
@@ -702,7 +701,7 @@ const baseData: any[] = [
         "Start": "2013-06-05T15:00:00.000Z",
         "End": "2013-06-05T16:00:00.000Z",
         "EndTimezone": null,
-        "RecurrenceRule": "FREQ=WEEKLY;BYDAY=WE",
+        "RecurrenceRule": "",
         "RecurrenceID": null,
         "RecurrenceException": null,
     },
@@ -728,23 +727,25 @@ const baseData: any[] = [
         "Start": "2020-06-24T19:00:00.000Z",
         "End": "2020-06-24T21:00:00.000Z",
         "EndTimezone": null,
-        "RecurrenceRule": "FREQ=WEEKLY;BYDAY=TU,TH",
+        "RecurrenceRule": "",
         "RecurrenceID": null,
         "RecurrenceException": null,
     },
     {
-        "TaskID": 122,
+        "TaskID": 150,
         "OwnerID": 1,
-        "Title": "datadataaaa",
+        "Title": "datadataaaaaaaaaaaaaaaaaaaa",
         "Description": "",
         "StartTimezone": null,
-        "Start": "2020-06-24T13:00:00.000Z",
-        "End": "2020-06-24T14:00:00.000Z",
+        "Start": "Tue Jun 30 2020 00:00:00 GMT+0400",
+        "End": "Tue Jun 30 2020 03:30:00 GMT+0400",
         "EndTimezone": null,
         "RecurrenceRule": "",
         "RecurrenceID": null,
         "RecurrenceException": null,
     },
+
+
 ];
 
 const currentYear = new Date().getFullYear();
@@ -754,19 +755,13 @@ const parseAdjust = (eventDate: string): Date => {
     return date;
 };
 
-const randomInt = (min, max): number => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-export const displayDate = new Date(currentYear, 5, 24);
-
 export const sampleData = baseData.map(dataItem => (
     <SchedulerEvent> {
         id: dataItem.TaskID,
         start: parseAdjust(dataItem.Start),
-        startTimezone: 'Europe/Georgia',
+        startTimezone: '',
         end: parseAdjust(dataItem.End),
-        endTimezone: 'Europe/Georgia',
+        endTimezone: '',
         title: dataItem.Title,
         description: dataItem.Description,
         recurrenceRule: dataItem.RecurrenceRule,
@@ -778,27 +773,3 @@ export const sampleData = baseData.map(dataItem => (
     }
 ));
 
-export const sampleDataWithResources = baseData.map(dataItem => (
-    <SchedulerEvent> {
-        id: dataItem.TaskID,
-        start: parseAdjust(dataItem.Start),
-        startTimezone: 'Europe/Georgia',
-        end: parseAdjust(dataItem.End),
-        endTimezone: 'Europe/Georgia',
-        title: dataItem.Title,
-        description: dataItem.Description,
-        recurrenceRule: dataItem.RecurrenceRule,
-        recurrenceId: dataItem.RecurrenceID,
-        recurrenceException: dataItem.RecurrenceException,
-        roomId: randomInt(1, 2),
-        attendees: [randomInt(1, 3)]
-    }
-));
-
-export const sampleDataWithCustomSchema = baseData.map(dataItem => (
-    {
-        ...dataItem,
-        Start: parseAdjust(dataItem.Start),
-        End: parseAdjust(dataItem.End)
-    }
-));

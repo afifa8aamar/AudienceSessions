@@ -1,4 +1,4 @@
-export interface ISubjectType {
-    Id : number ;
-    Type : 'თეორიული' | 'პრაქტიკული';
+export enum SubjectTypeEnum {
+    Theoretical,
+    Practical
 }

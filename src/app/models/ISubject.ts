@@ -1,7 +1,10 @@
-import { ISubjectType } from './ISubjectType';
+import { SubjectTypeEnum } from './ISubjectType';
+import { SubjectEnum } from '../json/subjects';
 
 export interface ISubject {
     Id : number;
+    Subject : SubjectEnum;
     Name : string;
-    Type : ISubjectType;
+    SubjectType : SubjectTypeEnum;
+    Count : number;
 }

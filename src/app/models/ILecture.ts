@@ -1,10 +1,9 @@
-import { ILecturer } from './ILecturer';
-import { ISubject } from './ISubject';
+import { DateClass } from './DateClass';
 
 export interface ILecture {
     LectureId : number ;
-    StartTime : Date;
-    EndTime : Date;
+    StartTime ?: DateClass;
+    EndTime ?: DateClass;
     SubjectId : number;
     LecturerId : number;
     AuditoriumId : number;

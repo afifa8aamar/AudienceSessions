@@ -1,16 +1,146 @@
-<kendo-scheduler 
+<!-- <kendo-scheduler 
     [kendoSchedulerBinding]="events"
+    [workDayStart] = 'workDayStart'
+    [workDayEnd] = 'workDayEnd'
     [selectedDate]="selectedDate">
 
-        <kendo-scheduler-day-view>
-        </kendo-scheduler-day-view>
+    <ng-template kendoSchedulerToolbarTemplate>
+        <button kendoSchedulerPDFCommand>Export PDF</button>
+        <ul kendoSchedulerToolbarNavigation></ul>
+        <ul kendoSchedulerToolbarViewSelector></ul>
+    </ng-template>
 
-        <kendo-scheduler-week-view>
-        </kendo-scheduler-week-view>
+    <kendo-scheduler-day-view>
+    </kendo-scheduler-day-view>
 
-        <kendo-scheduler-timeline-view>
-        </kendo-scheduler-timeline-view>
+    <kendo-scheduler-week-view>
+    </kendo-scheduler-week-view>
 
-        <kendo-scheduler-agenda-view>
-        </kendo-scheduler-agenda-view>
+    <kendo-scheduler-timeline-view>
+    </kendo-scheduler-timeline-view>
+
 </kendo-scheduler>
+
+workDayStart = '2020/30/6 08:00 AM '
+workDayEnd = '2020/30/6 10:00 PM ' -->
+
+<div class="registered">
+    <h2>Registered</h2>
+    <div class="sessions" *ngFor="let session of audienceSessions; let i = index">
+        <div class="session">
+            <div class="index">{{i+1}}.</div>
+            <div class="day">
+                {{getSessionDay(session)}}
+            </div> 
+            <div class="start">
+                {{getStartTime(session)}}
+            </div>
+            <div class="end">
+                {{getEndTime(session)}} 
+            </div>
+            <div class="lecture">
+                {{getLectureName(session)}}
+            </div> 
+            <div class="lecturer">
+                {{getLecturerName(session)}}
+            </div>
+            <div class="auditoryName">
+                {{getAuditoryName(session)}}
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="unregistered">
+    <h2>Unregistered</h2>
+    <div class="sessions" *ngFor="let session of unregistered; let i = index">
+        <div class="session">
+            <div class="index">{{i+1}}.</div>
+            <div class="day">
+                {{getSessionDay(session)}}
+            </div> 
+            <div class="start">
+                {{getStartTime(session)}}
+            </div>
+            <div class="end">
+                {{getEndTime(session)}} 
+            </div>
+            <div class="lecture">
+                {{getLectureName(session)}}
+            </div> 
+            <div class="lecturer">
+                {{getLecturerName(session)}}
+            </div>
+            <div class="auditoryName">
+                {{getAuditoryName(session)}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="Aud">
+    <div *ngFor="let aud of auditoriums">
+        <h3>Auditorium {{aud.AuditoriumId}}</h3>
+        <div class="auditoriumInfo">
+            <div class="sessions" *ngFor="let session of getSessionsForAuditorium(aud); let i = index">
+                <div class="session">
+                    <div class="index">{{i+1}}.</div>
+                    <div class="day">
+                        {{getSessionDay(session)}}
+                    </div> 
+                    <div class="start">
+                        {{getStartTime(session)}}
+                    </div>
+                    <div class="end">
+                        {{getEndTime(session)}} 
+                    </div>
+                    <div class="lecture">
+                        {{getLectureName(session)}}
+                    </div> 
+                    <div class="lecturer">
+                        {{getLecturerName(session)}}
+                    </div>
+                    <div class="auditoryName">
+                        {{getAuditoryName(session)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="Lect">
+    <div *ngFor="let lect of lecturers">
+        <h3>Lecturer {{lect.FirstName}} {{lect.LastName}} {{lect.Id}}</h3>
+        <div class="auditoriumInfo">
+            <div class="sessions" *ngFor="let session of getSessionsForLecturer(lect); let i = index">
+                <div class="session">
+                    <div class="index">{{i+1}}.</div>
+                    <div class="day">
+                        {{getSessionDay(session)}}
+                    </div> 
+                    <div class="start">
+                        {{getStartTime(session)}}
+                    </div>
+                    <div class="end">
+                        {{getEndTime(session)}} 
+                    </div>
+                    <div class="lecture">
+                        {{getLectureName(session)}}
+                    </div> 
+                    <div class="lecturer">
+                        {{getLecturerName(session)}}
+                    </div>
+                    <div class="auditoryName">
+                        {{getAuditoryName(session)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

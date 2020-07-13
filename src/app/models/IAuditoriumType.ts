@@ -1,4 +1,4 @@
-import { AuditoriumEnum } from './../json/auditoriumTypes';
+import { AuditoriumEnum } from './IAuditorim';
 
 export interface IAuditoriumType {
     AuditoriumTypeId : number;

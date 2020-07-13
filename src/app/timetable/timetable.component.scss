@@ -1,0 +1,31 @@
+.session {
+    display: flex;
+
+    .index{
+        width: 20px;
+    }
+
+    .day {
+        width: 100px;
+    }
+
+    .start {
+        width: 40px;
+    }
+
+    .end {
+        width: 40px;
+    }
+
+    .lecture {
+        width: 300px;
+    }
+
+    .lecturer {
+        width: 150px;
+    }
+
+    .auditoryName {
+        width: 70px;
+    }
+}

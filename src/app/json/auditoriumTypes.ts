@@ -1,69 +1,106 @@
-import { IAuditorium } from '../models/IAuditorim';
+import { AuditoriumEnum, IAuditorium } from '../models/IAuditorim';
+import { IAuditoriumType } from '../models/IAuditoriumType';
 
-export enum AuditoriumEnum {
-    Regular, 
-    Small, 
-    Big60, 
-    Big300, 
-    Computer15, 
-    Computer20, 
-    Drawing, 
-    MediaComputers, 
-    MediaAuditorium, 
-    LawAuditorium
-}
+export const auditoriumTypes : IAuditoriumType[] = [
+    {
+        AuditoriumTypeId : 1,
+        TypeName : AuditoriumEnum.Regular,
+        HasComputer : true ,
+        HasDrawingTables : true ,
+        HasSpecificPrograms : true ,
+        IsLawAuditorium : true,
+        MaximumNumberOfStudents : 30,
+        IsMediaAuditorium : true 
+    },
+    {
+        AuditoriumTypeId : 2,
+        TypeName : AuditoriumEnum.Small,
+        HasComputer : false ,
+        HasDrawingTables : false ,
+        HasSpecificPrograms : false ,
+        IsLawAuditorium : false,
+        MaximumNumberOfStudents : 15,
+        IsMediaAuditorium : false 
+    },
+    {
+        AuditoriumTypeId : 3,
+        TypeName : AuditoriumEnum.Big60,
+        HasComputer : false ,
+        HasDrawingTables : false ,
+        HasSpecificPrograms : false ,
+        IsLawAuditorium : false,
+        MaximumNumberOfStudents : 60,
+        IsMediaAuditorium : false 
+    },
+    {
+        AuditoriumTypeId : 4,
+        TypeName : AuditoriumEnum.Big300,
+        HasComputer : false ,
+        HasDrawingTables : false ,
+        HasSpecificPrograms : false ,
+        IsLawAuditorium : false,
+        MaximumNumberOfStudents : 300,
+        IsMediaAuditorium : false 
+    },
+    {
+        AuditoriumTypeId : 5,
+        TypeName : AuditoriumEnum.Computer15,
+        HasComputer : true ,
+        HasDrawingTables : false ,
+        HasSpecificPrograms : true ,
+        IsLawAuditorium : false,
+        MaximumNumberOfStudents : 15,
+        IsMediaAuditorium : false 
+    },
+    {
+        AuditoriumTypeId : 6,
+        TypeName : AuditoriumEnum.Computer20,
+        HasComputer : true ,
+        HasDrawingTables : false ,
+        HasSpecificPrograms : false ,
+        IsLawAuditorium : false,
+        MaximumNumberOfStudents : 20,
+        IsMediaAuditorium : false 
+    },
+    {
+        AuditoriumTypeId : 7,
+        TypeName : AuditoriumEnum.Drawing,
+        HasComputer : false ,
+        HasDrawingTables : true ,
+        HasSpecificPrograms : false ,
+        IsLawAuditorium : false,
+        MaximumNumberOfStudents : 30,
+        IsMediaAuditorium : false 
+    },
+    {
+        AuditoriumTypeId : 8,
+        TypeName : AuditoriumEnum.MediaComputers,
+        HasComputer : true ,
+        HasDrawingTables : false ,
+        HasSpecificPrograms : true ,
+        IsLawAuditorium : false,
+        MaximumNumberOfStudents : 20,
+        IsMediaAuditorium : true 
+    },
+    {
+        AuditoriumTypeId : 9,
+        TypeName : AuditoriumEnum.MediaAuditorium,
+        HasComputer : true ,
+        HasDrawingTables : false ,
+        HasSpecificPrograms : true ,
+        IsLawAuditorium : false,
+        MaximumNumberOfStudents : 20,
+        IsMediaAuditorium : true 
+    },
+    {
+        AuditoriumTypeId : 10,
+        TypeName : AuditoriumEnum.LawAuditorium,
+        HasComputer : false ,
+        HasDrawingTables : false ,
+        HasSpecificPrograms : false ,
+        IsLawAuditorium : true,
+        MaximumNumberOfStudents : 30,
+        IsMediaAuditorium : false 
+    },
 
-export const AuditoriumTypes : IAuditorium [] = [
-    {
-        AuditoriumId : 1,
-        Name : AuditoriumEnum.Regular , 
-        AuditoriumTypeId : 1
-    },
-    {
-        AuditoriumId : 2,
-        Name : AuditoriumEnum.Small , 
-        AuditoriumTypeId : 1
-    },
-    {
-        AuditoriumId : 3,
-        Name : AuditoriumEnum.Big60 , 
-        AuditoriumTypeId : 1
-    }, 
-    {
-        AuditoriumId : 4,
-        Name :AuditoriumEnum.Big300 , 
-        AuditoriumTypeId : 1
-    },
-    {
-        AuditoriumId : 5,
-        Name : AuditoriumEnum.Computer15 , 
-        AuditoriumTypeId : 1
-    }, 
-    {
-        AuditoriumId : 6,
-        Name : AuditoriumEnum.Computer20 , 
-        AuditoriumTypeId : 1
-    }, 
-    {
-        AuditoriumId : 7,
-        Name : AuditoriumEnum.Drawing , 
-        AuditoriumTypeId : 1 
-    }, 
-    {
-        AuditoriumId : 8,
-        Name : AuditoriumEnum.MediaComputers , 
-        AuditoriumTypeId : 1 
-    }, 
-    {
-        AuditoriumId : 9,
-        Name : AuditoriumEnum.MediaAuditorium , 
-        AuditoriumTypeId : 1 
-    }, 
-    {
-        AuditoriumId : 10,
-        Name : AuditoriumEnum.LawAuditorium , 
-        AuditoriumTypeId : 1
-    }
 ]
-
-
